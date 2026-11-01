@@ -1,0 +1,23 @@
+{
+  "name": "@earning-machine/monetization-email-kit",
+  "version": "1.0.0",
+  "description": "E-Commerce Email Retainer Agreements, Agency White-Label Pitch Deck & Dual-Currency Invoicing Engine",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node dist/demo_runner.js"
+  },
+  "keywords": [
+    "email-retainer",
+    "service-agreement",
+    "agency-pitch",
+    "gst-lut",
+    "brand-retainer"
+  ],
+  "author": "Dr. Milind Chatrabhuji",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

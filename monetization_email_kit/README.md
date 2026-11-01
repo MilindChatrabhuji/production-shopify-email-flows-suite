@@ -1,0 +1,1 @@
+# Pack 3: Monetization & Email Retainer Kit\n\nClient legal agreements, store intake workbooks, white-label pitch decks, dual-currency billing, and D1 schema.

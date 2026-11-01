@@ -1,0 +1,1 @@
+# Pack 1: Core Lifecycle Email Engine\n\nShopify event routing, 3-stage abandoned cart recovery, RFM win-back segmentation, and predictive CLV scoring.

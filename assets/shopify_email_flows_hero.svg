@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0D18" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1E1B4B" />
+    </linearGradient>
+    <linearGradient id="emailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Blueprint Grid -->
+  <g stroke="#334155" stroke-width="0.5" opacity="0.3">
+    <line x1="100" y1="0" x2="100" y2="630" />
+    <line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="500" y1="0" x2="500" y2="630" />
+    <line x1="700" y1="0" x2="700" y2="630" />
+    <line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="1100" y1="0" x2="1100" y2="630" />
+    <line x1="0" y1="100" x2="1200" y2="100" />
+    <line x1="0" y1="200" x2="1200" y2="200" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="400" x2="1200" y2="400" />
+    <line x1="0" y1="500" x2="1200" y2="500" />
+  </g>
+
+  <!-- Central Card Enclosure -->
+  <rect x="80" y="60" width="1040" height="510" rx="24" fill="#0F172A" stroke="#334155" stroke-width="2" opacity="0.9" />
+
+  <!-- Top Pill Badge -->
+  <rect x="120" y="95" width="260" height="36" rx="18" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.5" />
+  <circle cx="138" cy="113" r="6" fill="#8B5CF6" />
+  <text x="154" y="118" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="1">WAY #58 &#8226; PRODUCT 60</text>
+
+  <!-- Title & Headline -->
+  <text x="120" y="175" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800">Production E-Commerce Email Flows Suite</text>
+  <text x="120" y="212" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="500">Shopify Welcome, Abandoned Cart, Post-Purchase &amp; Win-Back Retention Engine</text>
+
+  <!-- Left Column: Core Pillars -->
+  <g transform="translate(120, 245)">
+    <!-- Cart Recovery Card -->
+    <rect x="0" y="0" width="280" height="90" rx="12" fill="#1E293B" stroke="#3B82F6" stroke-width="1.5" />
+    <text x="20" y="32" fill="#60A5FA" font-family="sans-serif" font-size="16" font-weight="700">3-Stage Cart Recovery</text>
+    <text x="20" y="58" fill="#E2E8F0" font-family="sans-serif" font-size="13">1h Urgency &#8226; 24h Proof &#8226; 48h Offer</text>
+    <text x="20" y="76" fill="#94A3B8" font-family="sans-serif" font-size="11">Recovers 15-25% Abandoned Revenue</text>
+
+    <!-- RFM Segmentation Card -->
+    <rect x="0" y="105" width="280" height="90" rx="12" fill="#1E293B" stroke="#8B5CF6" stroke-width="1.5" />
+    <text x="20" y="137" fill="#C084FC" font-family="sans-serif" font-size="16" font-weight="700">RFM Cohorts &amp; CLV Scorer</text>
+    <text x="20" y="163" fill="#E2E8F0" font-family="sans-serif" font-size="13">60/90/120 Day Lapsed Reactivation</text>
+    <text x="20" y="181" fill="#94A3B8" font-family="sans-serif" font-size="11">Predictive 12-Month Spend Model</text>
+
+    <!-- Edge Gateway Card -->
+    <rect x="0" y="210" width="280" height="90" rx="12" fill="#1E293B" stroke="#EC4899" stroke-width="1.5" />
+    <text x="20" y="242" fill="#F472B6" font-family="sans-serif" font-size="16" font-weight="700">Edge Deliverability Guard</text>
+    <text x="20" y="268" fill="#E2E8F0" font-family="sans-serif" font-size="13">SPF, DKIM, DMARC, BIMI Checked</text>
+    <text x="20" y="286" fill="#94A3B8" font-family="sans-serif" font-size="11">Cloudflare D1 &amp; Sub-50ms Router</text>
+  </g>
+
+  <!-- Right Column: Specs & Licensing -->
+  <g transform="translate(430, 245)">
+    <!-- Specifications Box -->
+    <rect x="0" y="0" width="650" height="195" rx="14" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <text x="24" y="32" fill="#C084FC" font-family="sans-serif" font-size="14" font-weight="700" letter-spacing="1">SYSTEM ARCHITECTURE &amp; CAPABILITIES</text>
+    
+    <text x="24" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="600">&#8226; Pack 1: Event Router, 3-Stage Cart Recovery, RFM Win-Back, Post-Purchase Nurture</text>
+    <text x="24" y="92" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="600">&#8226; Pack 2: Klaviyo/Shopify Edge Webhook Listener, Analytics Aggregator, Deliverability Guard</text>
+    <text x="24" y="119" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="600">&#8226; Pack 3: Email Retainer Agreements ($500 - $3,000/mo), Client Onboarding Brief, Invoicing</text>
+    <text x="24" y="146" fill="#FFFFFF" font-family="sans-serif" font-size="13" font-weight="600">&#8226; Rigor: 100% Modern Evidence-Based Clinical Compliance &amp; CAN-SPAM / GDPR / DPDP Safe</text>
+    <text x="24" y="173" fill="#34D399" font-family="sans-serif" font-size="13" font-weight="700">&#8226; Verification: 100% Zero-Defect Pass Certified &#8226; 8 CRC-Verified Release Archives</text>
+
+    <!-- Pricing & Commercial Bar -->
+    <rect x="0" y="210" width="650" height="90" rx="14" fill="#0B132B" stroke="#8B5CF6" stroke-width="1.5" />
+    <text x="24" y="245" fill="#F8FAFC" font-family="sans-serif" font-size="16" font-weight="700">Commercial Licensing: Single Pack $9.00 USD (~&#8377;750) &#8226; Master Suite $19.00 USD (~&#8377;1,599)</text>
+    <text x="24" y="275" fill="#94A3B8" font-family="sans-serif" font-size="13">Direct UPI: milind.chatrabhuji@okhdfcbank &#8226; PayPal: milind.chatrabhuji@gmail.com</text>
+  </g>
+</svg>

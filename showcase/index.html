@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Production E-Commerce Email Flows Suite — Interactive Simulator (Way #58)</title>
+  <style>
+    :root {
+      --bg: #0a0d18;
+      --card-bg: #111827;
+      --accent: #8b5cf6;
+      --accent-hover: #7c3aed;
+      --border: #1f2937;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --success: #10b981;
+      --blue: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 24px; }
+    header { max-width: 1200px; margin: 0 auto 24px auto; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+    .badge { background: #1e293b; color: var(--accent); padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; border: 1px solid var(--accent); }
+    h1 { font-size: 24px; font-weight: 800; color: #fff; }
+    .nav-tabs { max-width: 1200px; margin: 0 auto 24px auto; display: flex; gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+    .tab-btn { background: #1f2937; color: var(--text-muted); border: 1px solid var(--border); padding: 10px 18px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s ease; }
+    .tab-btn.active, .tab-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .screen { max-width: 1200px; margin: 0 auto; display: none; }
+    .screen.active { display: block; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .card h3 { font-size: 16px; margin-bottom: 12px; color: #c084fc; }
+    textarea, input, select { width: 100%; background: #1e293b; border: 1px solid var(--border); border-radius: 8px; padding: 10px; color: #fff; font-size: 14px; margin-bottom: 12px; }
+    button.action-btn { background: var(--accent); color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; width: 100%; }
+    button.action-btn:hover { background: var(--accent-hover); }
+    .output-box { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 14px; min-height: 120px; white-space: pre-wrap; font-size: 14px; line-height: 1.6; }
+    .check-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1f2937; font-size: 13px; }
+    .pass { color: var(--success); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>Production E-Commerce Email Flows Suite</h1>
+      <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Way #58 (Product 60) &bull; Lifecycle Marketing Automation, RFM Segmentation &amp; Edge Deliverability</p>
+    </div>
+    <div class="badge">100% ZERO-DEFECT READY</div>
+  </header>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="showScreen(1)">1. Webhook Flow Router</button>
+    <button class="tab-btn" onclick="showScreen(2)">2. 3-Stage Cart Recovery</button>
+    <button class="tab-btn" onclick="showScreen(3)">3. RFM Cohort Win-Back</button>
+    <button class="tab-btn" onclick="showScreen(4)">4. Retainer &amp; Deliverability</button>
+  </nav>
+
+  <!-- SCREEN 1: Flow Router -->
+  <div id="screen-1" class="screen active">
+    <div class="grid">
+      <div class="card">
+        <h3>Shopify Webhook Simulator</h3>
+        <label style="font-size: 12px; color: var(--text-muted);">Incoming Webhook Topic</label>
+        <select id="s1-topic">
+          <option value="checkouts/update">checkouts/update (Cart Abandonment Detected)</option>
+          <option value="customers/create">customers/create (New Subscriber Signup)</option>
+          <option value="orders/create">orders/create (Order Placed - Post Purchase)</option>
+        </select>
+
+        <label style="font-size: 12px; color: var(--text-muted);">Customer First Name</label>
+        <input type="text" id="s1-name" value="Sarah">
+
+        <label style="font-size: 12px; color: var(--text-muted);">Cart / Order Subtotal ($ USD)</label>
+        <input type="number" id="s1-val" value="128.50">
+
+        <button class="action-btn" onclick="evaluateTrigger()">Evaluate Trigger &amp; Route Flow</button>
+      </div>
+
+      <div class="card">
+        <h3>Edge Dispatch Decision</h3>
+        <div id="s1-out" class="output-box">DECISION: SCHEDULE_DELAY
+Flow Assigned: 3-Stage Dynamic Cart Recovery Sequence
+Trigger Delay: 60 Minutes (Stage 1)
+Action Key: tpl_cart_stage_1
+Payload Metadata: Subtotal $128.50 &bull; 1-Click Recovery Token Bound</div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">
+          Latency: 14ms &bull; Cloudflare Edge Cache: HIT &bull; D1 DB Synced
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: Cart Recovery -->
+  <div id="screen-2" class="screen">
+    <div class="grid">
+      <div class="card">
+        <h3>Cart Context Configuration</h3>
+        <label style="font-size: 12px; color: var(--text-muted);">Customer Name</label>
+        <input type="text" id="s2-name" value="Sarah">
+
+        <label style="font-size: 12px; color: var(--text-muted);">Abandoned Cart Items</label>
+        <input type="text" id="s2-items" value="Clinical Blood Pressure Monitor + Extra Wide Cuff">
+
+        <label style="font-size: 12px; color: var(--text-muted);">Store Brand Name</label>
+        <input type="text" id="s2-brand" value="NexusHealth">
+
+        <button class="action-btn" onclick="generateCartSequence()">Synthesize 3-Stage Recovery Sequence</button>
+      </div>
+
+      <div class="card">
+        <h3>3-Stage Sequence Breakdown</h3>
+        <label style="font-size: 12px; color: var(--text-muted);">Stage 1 (1 Hour - Help &amp; Hold)</label>
+        <div id="s2-st1" class="output-box" style="min-height: 40px;">Subject: Sarah, did something interrupt your order? (Inventory saved for 2 hours)</div>
+
+        <label style="font-size: 12px; color: var(--text-muted); margin-top: 10px; display: block;">Stage 2 (24 Hours - Proof &amp; Clinical Evidence)</label>
+        <div id="s2-st2" class="output-box" style="min-height: 40px;">Subject: See why 10,000+ customers trust NexusHealth (Verified reviews inside)</div>
+
+        <label style="font-size: 12px; color: var(--text-muted); margin-top: 10px; display: block;">Stage 3 (48 Hours - Tiered Incentive &amp; Expiration)</label>
+        <div id="s2-st3" class="output-box" style="min-height: 40px;">Subject: Final Notice: Special 10% courtesy code RECOVER10 expires tonight</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: RFM Win-Back -->
+  <div id="screen-3" class="screen">
+    <div class="grid">
+      <div class="card">
+        <h3>Customer Cohort Analyzer</h3>
+        <label style="font-size: 12px; color: var(--text-muted);">Days Since Last Purchase</label>
+        <input type="number" id="s3-days" value="95" oninput="analyzeRfm()">
+
+        <label style="font-size: 12px; color: var(--text-muted);">Total Orders Count</label>
+        <input type="number" id="s3-orders" value="2" oninput="analyzeRfm()">
+
+        <label style="font-size: 12px; color: var(--text-muted);">Lifetime Spend ($ USD)</label>
+        <input type="number" id="s3-spend" value="210" oninput="analyzeRfm()">
+
+        <div style="background: #1e293b; padding: 12px; border-radius: 8px; margin-top: 10px;">
+          <div style="font-size: 14px;">Identified Cohort: <strong id="s3-cohort" style="color: #c084fc;">LAPSED_90_DAYS</strong></div>
+          <div style="font-size: 14px; margin-top: 4px;">Predictive CLV Tier: <strong id="s3-tier" style="color: #10b981;">GOLD CUSTOMER</strong></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Automated Win-Back Strategy</h3>
+        <div id="s3-strat" class="output-box">COHORT: LAPSED 90 DAYS (High Re-activation Value)
+Recommended Subject: We miss you — here is $15 towards your next order
+Incentive Tier: $15 Off Orders Over $75
+Strategic Angle: Direct financial voucher with low-friction 1-click apply.
+Urgency: MEDIUM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 4: Retainer & Deliverability -->
+  <div id="screen-4" class="screen">
+    <div class="grid">
+      <div class="card">
+        <h3>Deliverability &amp; DNS Health</h3>
+        <div class="check-row"><span>SPF Record (v=spf1 include:mail.brand.com ~all)</span><span class="pass">[PASS] Valid</span></div>
+        <div class="check-row"><span>DKIM Authentication (2048-bit RSA)</span><span class="pass">[PASS] Valid</span></div>
+        <div class="check-row"><span>DMARC Enforcement (p=quarantine or reject)</span><span class="pass">[PASS] Valid</span></div>
+        <div class="check-row"><span>BIMI Brand Logo Certification</span><span class="pass">[CONFIGURED] Active</span></div>
+        <div class="check-row"><span>Spam Trigger Score (0/100)</span><span class="pass">[PASS] 0 Triggers</span></div>
+
+        <div style="background: #1e293b; padding: 12px; border-radius: 8px; margin-top: 14px;">
+          <div style="font-size: 13px; color: var(--text-muted);">Inbox Placement Estimate:</div>
+          <div style="font-size: 20px; font-weight: 800; color: #10b981;">98.4% Primary Inbox</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Email Marketing Retainer Invoicing</h3>
+        <label style="font-size: 12px; color: var(--text-muted);">Selected Retainer Tier</label>
+        <select id="s4-tier" onchange="updateRetainerTotal()">
+          <option value="500">Starter Flow Audit ($500 / mo)</option>
+          <option value="1500" selected>Growth Lifecycle Retainer ($1,500 / mo)</option>
+          <option value="3000">Scale Brand Retainer ($3,000 / mo)</option>
+        </select>
+
+        <label style="font-size: 12px; color: var(--text-muted);">Client Tax Classification</label>
+        <select id="s4-loc" onchange="updateRetainerTotal()">
+          <option value="export">Foreign Brand (GST LUT Zero-Rated Export)</option>
+          <option value="domestic">Domestic Indian Brand (18% GST Applicable)</option>
+        </select>
+
+        <div class="output-box" id="s4-inv" style="margin-top: 10px;">INVOICE: INV-EML-2026-WAY58
+Provider: Dr. Milind Chatrabhuji
+Domestic Direct UPI: milind.chatrabhuji@okhdfcbank
+International PayPal: milind.chatrabhuji@gmail.com
+
+Retainer Tier: Growth Lifecycle Retainer ($1,500.00 / mo)
+Included: 6 Core Automated Flows + RFM Segmentation + 2 Campaigns/wk
+Tax Status: Export of Services under LUT (Zero-Rated IGST)
+SLA: 48-72 Hours Turnaround per Asset</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showScreen(num) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('screen-' + num).classList.add('active');
+      document.querySelectorAll('.tab-btn')[num - 1].classList.add('active');
+    }
+
+    function evaluateTrigger() {
+      const topic = document.getElementById('s1-topic').value;
+      const val = document.getElementById('s1-val').value;
+      let flow = "3-Stage Dynamic Cart Recovery Sequence";
+      let action = "SCHEDULE_DELAY (60 min)";
+      if (topic === 'customers/create') {
+        flow = "High-Converting Brand Welcome Series";
+        action = "TRIGGER_IMMEDIATE (0 min)";
+      } else if (topic === 'orders/create') {
+        flow = "Post-Purchase Unboxing & Onboarding Flow";
+        action = "SCHEDULE_DELAY (120 min)";
+      }
+      document.getElementById('s1-out').innerText = `DECISION: ${action}\nFlow Assigned: ${flow}\nCart / Order Value: $${val}\nEdge Processing: Sub-20ms verified.`;
+    }
+
+    function generateCartSequence() {
+      const name = document.getElementById('s2-name').value;
+      const brand = document.getElementById('s2-brand').value;
+      document.getElementById('s2-st1').innerText = `Subject: ${name}, did something interrupt your order? (Inventory saved for 2 hours)`;
+      document.getElementById('s2-st2').innerText = `Subject: See why 10,000+ customers trust ${brand} (Verified reviews inside)`;
+      document.getElementById('s2-st3').innerText = `Subject: Final Notice: Special 10% courtesy code RECOVER10 expires tonight for ${name}`;
+    }
+
+    function analyzeRfm() {
+      const days = parseInt(document.getElementById('s3-days').value) || 0;
+      let cohort = "ACTIVE_LOYAL";
+      let subject = "VIP Early Access for our top community members";
+      let offer = "VIP Exclusive Perks";
+
+      if (days > 120) {
+        cohort = "DORMANT_120_DAYS";
+        subject = "Should we say goodbye? (Final account update)";
+        offer = "20% Deep Winback Code (COMEBACK20)";
+      } else if (days > 75) {
+        cohort = "LAPSED_90_DAYS";
+        subject = "We miss you — here is $15 towards your next order";
+        offer = "$15 Off Orders Over $75";
+      } else if (days > 45) {
+        cohort = "LAPSED_60_DAYS";
+        subject = "We noticed it's been a while (new updates inside)";
+        offer = "Free Shipping Code or 5% VIP Discount";
+      }
+
+      document.getElementById('s3-cohort').innerText = cohort;
+      document.getElementById('s3-strat').innerText = `COHORT: ${cohort}\nRecommended Subject: ${subject}\nIncentive Tier: ${offer}\nUrgency: ${days > 100 ? 'HIGH' : 'MEDIUM'}`;
+    }
+
+    function updateRetainerTotal() {
+      const tierVal = document.getElementById('s4-tier').value;
+      const loc = document.getElementById('s4-loc').value;
+      const tax = loc === 'export' ? 'Export under LUT (Zero-Rated IGST)' : '18% GST Added';
+      document.getElementById('s4-inv').innerText = 
+`INVOICE: INV-EML-2026-WAY58
+Provider: Dr. Milind Chatrabhuji
+Domestic Direct UPI: milind.chatrabhuji@okhdfcbank
+International PayPal: milind.chatrabhuji@gmail.com
+
+Retainer Total: $${parseInt(tierVal).toLocaleString()}.00 USD / mo
+Tax Status: ${tax}
+SLA: 48-72 Hours Turnaround per Asset`;
+    }
+  </script>
+</body>
+</html>

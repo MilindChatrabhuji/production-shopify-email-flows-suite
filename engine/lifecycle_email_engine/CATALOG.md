@@ -1,0 +1,1 @@
+# Pack 1 Catalog: Lifecycle Email Engine\n\nSingle Pack Price: $9.00 USD (~₹750 INR)

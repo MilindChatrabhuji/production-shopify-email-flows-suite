@@ -1,0 +1,24 @@
+{
+  "name": "@earning-machine/lifecycle-email-engine",
+  "version": "1.0.0",
+  "description": "Production E-Commerce Lifecycle Email Automation, Cart Recovery Synthesizer & RFM Segmenter",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node dist/demo_runner.js"
+  },
+  "keywords": [
+    "shopify-email",
+    "klaviyo-flows",
+    "cart-abandonment",
+    "rfm-segmentation",
+    "clv-scorer",
+    "lifecycle-marketing"
+  ],
+  "author": "Dr. Milind Chatrabhuji",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

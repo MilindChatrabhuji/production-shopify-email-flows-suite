@@ -1,0 +1,1 @@
+# Pack 2: Edge Email Gateway & Deliverability Monitor\n\nCloudflare Workers edge REST API, webhook listener, analytics aggregator, and SPF/DKIM/DMARC deliverability guard.

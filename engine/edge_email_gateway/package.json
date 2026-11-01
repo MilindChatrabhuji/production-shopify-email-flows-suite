@@ -1,0 +1,28 @@
+{
+  "name": "@earning-machine/edge-email-gateway",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers Edge REST API, Webhook Normalizer & Deliverability Guard for E-Commerce Lifecycle Email",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "node dist/demo_runner.js"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "d1",
+    "email-gateway",
+    "shopify-webhook",
+    "deliverability",
+    "klaviyo"
+  ],
+  "author": "Dr. Milind Chatrabhuji",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231121.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.19.0"
+  }
+}

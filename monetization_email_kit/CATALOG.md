@@ -1,0 +1,1 @@
+# Pack 3 Catalog: Monetization Kit\n\nSingle Pack Price: $9.00 USD (~₹750 INR)
